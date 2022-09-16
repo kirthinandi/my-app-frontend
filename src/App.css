@@ -67,3 +67,9 @@ body {
 .container {
   padding: 2px 16px;
 }
+
+.image {
+  display: inline-block;
+  width: 400px;
+  height: 300px;
+}
