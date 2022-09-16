@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PostList from './PostList'
+import PostForm from './PostForm'
 
 export default function Posts() {
 
@@ -15,6 +16,7 @@ export default function Posts() {
 
     return (
         <div>
+            <PostForm />
             <PostList posts={posts}/>
         </div>
     )
