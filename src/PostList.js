@@ -6,17 +6,14 @@ import PostForm from "./PostForm";
 
 export default function PostList({posts}) {
 
-   console.log(posts);
-
-   posts.map((post) => {
-    return (
-        <PostCard key={post.id} post={post.id} />
-    )
-   })
-   
-   return (
-    <div>
-        <PostForm />
+    console.log(posts)
+    return <div>
+        {posts.map((post) => {
+            return (
+                <PostCard key={post.id} post={post} />
+            )
+        })}
     </div>
-   )
+   
+   
 }
