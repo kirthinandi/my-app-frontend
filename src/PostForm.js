@@ -49,6 +49,15 @@ export default function PostForm({ onPostSubmit }) {
         <label> Enter today's date:</label>
         <input type="text" name="date" value={date} onChange={handleChange} /><br />
 
+        <label>Enter your entry:</label>
+        <input type="text" name="entry" value={entry} onChange={handleChange} /><br />
+
+        <select value={category} onChange={handleChange}>
+        <option value="Happy">Happy</option>
+        <option value="Angry">Angry</option>
+        <option value="Sad">Sad</option>
+      </select><br />
+
         <input type="submit" />
         </form>
         )
