@@ -14,6 +14,18 @@ export default function Posts() {
         })
     }, [])
 
+    function handleDeletePost(id) {
+        const updatePostsArray = posts.filter((post) => post.id !== id)
+        setPosts(updatePostsArray)
+    }
+
+    function handleEditPost(id) {
+        const updatePostsArrayTwo = posts.filter((post) => post)
+        setPosts(updatePostsArrayTwo)
+    }
+
+    
+
     return (
         <div>
             <br></br>
@@ -25,7 +37,7 @@ export default function Posts() {
             <img className="image" src="https://i.gifer.com/XhWI.gif"></img>
             
             <PostForm />
-            <PostList posts={posts}/>
+            <PostList posts={posts} onDeletePost={handleDeletePost} onEditPost={handleEditPost}/>
         </div>
     )
 }
