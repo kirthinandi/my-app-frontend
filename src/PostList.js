@@ -4,13 +4,13 @@ import PostForm from "./PostForm";
 
 
 
-export default function PostList({posts, onDeletePost, onEditPost}) {
+export default function PostList({posts, onDeletePost, updatePost}) {
 
     console.log(posts)
     return <div>
         {posts.map((post) => {
             return (
-                <PostCard key={post.id} post={post} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
+                <PostCard key={post.id} post={post} onDeletePost={onDeletePost} updatePost={updatePost}/>
             )
         })}
     </div>

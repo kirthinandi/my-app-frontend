@@ -86,3 +86,11 @@ body {
   font-family:'Courier New', Courier, monospace;
   margin-top: 30px;
 }
+
+.button {
+  background-color:mediumpurple;
+  height: 25px;
+  font-size: 20px;
+  color: white;
+  margin-left: 8px;
+}

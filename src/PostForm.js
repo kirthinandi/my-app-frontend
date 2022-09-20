@@ -2,25 +2,21 @@ import React, { useEffect, useState } from "react";
 
 
 
-export default function PostForm() {
-   const [posts, setPosts] = useState([])
+export default function PostForm({addPost}) {
    const [title, setTitle] = useState("")
    const [date, setDate] = useState("")
    const [entry, setEntry] = useState("")
-   const [category, setCategory] = useState("")
-
+   const [categoryId, setCategoryId] = useState("")
+const [categories, setCategories] = useState([])
    useEffect(() => {
-    fetch("http://localhost:9292/posts")
+    fetch("http://localhost:9292/categories")
     .then(response => response.json())
     .then((data) => {
-      setPosts(data)
+      setCategories(data)
     })
   }, [])
 
-  function onAddPost(newPost) {
-    const updatedPostsArray = [...posts, newPost]
-    setPosts(updatedPostsArray)
-  }
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -28,17 +24,18 @@ export default function PostForm() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "accepts": "application/json"
     },
     body: JSON.stringify({
       title: title,
       date: date,
       entry: entry,
-      category: category
+      category_id: categoryId
     })
   
   })
   .then((r) => r.json())
-  .then((newPost) => onAddPost(newPost))
+  .then((newPost) => addPost(newPost))
   }
 
   return (
@@ -48,7 +45,13 @@ export default function PostForm() {
         <input className="input" onChange = {(e) => setTitle(e.target.value)} value={title} type="text" title="title" placeholder="Enter Post's Title" />
         <input className="input" onChange = {(e) => setDate(e.target.value)} value={date} type="text" date="date" placeholder="Enter Post's Date" />
         <input className="input" onChange = {(e) => setEntry(e.target.value)} value={entry} type="text" entry="entry" placeholder="Post Entry" />
-        <button type="submit">Create Post</button>
+        <select onChange={(e)=> setCategoryId(e.target.value)} name="emotions" className="button">
+        <option disabled selected value> -- select an option -- </option>
+            {categories.map(c => {
+                return <option value={c.id}>{c.emotion}</option>
+            })}
+        </select>
+        <button className="button" type="submit">Create Post</button>
     </form>
     </>
   )

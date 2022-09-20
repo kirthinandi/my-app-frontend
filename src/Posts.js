@@ -19,9 +19,18 @@ export default function Posts() {
         setPosts(updatePostsArray)
     }
 
-    function handleEditPost(id) {
-        const updatePostsArrayTwo = posts.filter((post) => post)
-        setPosts(updatePostsArrayTwo)
+    function addPost(newPost) {
+        setPosts(posts => [...posts, newPost])
+    }
+
+    function handleUpdatePost(updatedPost) {
+        setPosts((posts) => posts.map(p => {
+            if (p.id == updatedPost.id) {
+                return updatedPost
+            } else {
+                return p
+            }
+        }))
     }
 
     
@@ -36,8 +45,8 @@ export default function Posts() {
             <img className="image" src="https://i.gifer.com/Rgjb.gif"></img>
             <img className="image" src="https://i.gifer.com/XhWI.gif"></img>
             
-            <PostForm />
-            <PostList posts={posts} onDeletePost={handleDeletePost} onEditPost={handleEditPost}/>
+            <PostForm addPost={addPost} />
+            <PostList updatePost={handleUpdatePost} posts={posts} onDeletePost={handleDeletePost}/>
         </div>
     )
 }
