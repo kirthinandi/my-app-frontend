@@ -1,6 +1,9 @@
 body {
   background-color:plum;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/001/850/138/non_2x/light-pink-blue-pattern-with-wavy-lines-vector.jpg");
+  background-size: 250vh 100vh;
 }
+
 
 .App {
   text-align: center;
@@ -44,6 +47,8 @@ body {
 #header {
   font-size: 50px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background:floralwhite;
+  margin-top: 30px;
 }
 
 .card {
@@ -54,7 +59,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
-  background-color:cornflowerblue !important;
+  background-color:midnightblue !important;
   box-align: center;
 }
 
@@ -66,6 +71,7 @@ body {
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+  color:white;
 }
 
 .image {
@@ -84,7 +90,15 @@ body {
 .form {
   font-size: 30px;
   font-family:'Courier New', Courier, monospace;
+}
+
+.form-title {
+  font-size: 30px;
+  font-family:'Courier New', Courier, monospace;
   margin-top: 30px;
+  background:floralwhite;
+  width: 500px;
+  margin-left: 38em;
 }
 
 .button {
@@ -93,4 +107,12 @@ body {
   font-size: 20px;
   color: white;
   margin-left: 8px;
+}
+
+
+.span {
+  background:lightpink;
+  font-size: 22px;
+  margin-left: 15px;
+
 }
