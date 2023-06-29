@@ -2,6 +2,7 @@ body {
   background-color:plum;
   background-image: url("https://static.vecteezy.com/system/resources/previews/001/850/138/non_2x/light-pink-blue-pattern-with-wavy-lines-vector.jpg");
   background-size: 250vh 100vh;
+  margin-bottom: 30px;
 }
 
 
@@ -95,10 +96,10 @@ body {
 .form-title {
   font-size: 30px;
   font-family:'Courier New', Courier, monospace;
-  margin-top: 30px;
+  margin-top: 70px;
   background:floralwhite;
   width: 500px;
-  margin-left: 38em;
+  margin-left: 18em;
 }
 
 .button {
@@ -107,6 +108,7 @@ body {
   font-size: 20px;
   color: white;
   margin-left: 8px;
+  margin-bottom: 25px;
 }
 
 
